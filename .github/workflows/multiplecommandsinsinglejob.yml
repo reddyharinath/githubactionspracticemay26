@@ -1,0 +1,11 @@
+name: multiple commands in single job
+on: workflow_dispatch
+jobs:
+  job_mutlple_commands_single_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: multiple commands in single job
+        run: |
+          echo " fist line"
+          echo " second line"
+          echo  " third line"
