@@ -1,0 +1,14 @@
+name: multiple jobs in single workflow
+on: workflow_dispatch
+jobs:
+  job_1_multiple_jobs_single_work_flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first job step
+        run: echo " first job step"
+  job_2_multiple_jos_single_work_flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: second job step
+        run: echo "second job step"
+  
