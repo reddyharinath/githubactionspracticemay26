@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: output generation step
         id: output_generation_step
-        run: echo "version=0.0.1" >> GITHUB_OUTPUT
+        run: echo "version=0.0.1" >> $GITHUB_OUTPUT
   deploy:
     runs-on: ubuntu-latest
     needs: build
