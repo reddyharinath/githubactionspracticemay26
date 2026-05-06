@@ -6,7 +6,7 @@ on:
         description: inputs demo environment
         required: true
         default: dev
-        types: choice
+        type: choice
         options:
           - dev
           - test
