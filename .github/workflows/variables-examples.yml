@@ -1,0 +1,8 @@
+name: variables examples
+on: workflow_dispatch
+jobs:
+ job_variables_examples:
+   runs-on: ubuntu-latest
+   steps:
+     - name: variables example step
+       run: echo " the app name is ${{ vars.APP_NAME }}"
