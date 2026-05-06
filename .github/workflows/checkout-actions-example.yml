@@ -1,0 +1,11 @@
+name: checkout actions demo
+on: push
+jobs:
+  job_checkout_actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout actions exmaple step
+        uses: actions/checkoutactions@v4
+      - name: pront index.html file
+        run: cat index.html
+        
