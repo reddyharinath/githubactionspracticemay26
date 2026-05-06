@@ -1,8 +1,5 @@
   name: env variables exmaples
-  on:
-    push:
-      branches:
-        - main
+  on: workflow_dispatch
   env:
     APP_ENV_NAME: dev
   jobs:
