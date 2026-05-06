@@ -10,7 +10,7 @@ jobs:
     env:
       APP_ENV_NAME: test
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: env variabel example
       env:
         APP_ENV_NAME: PROD
