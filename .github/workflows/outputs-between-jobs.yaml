@@ -1,0 +1,18 @@
+name: outputs between jobs
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{steps.output_generation_step.outputs.version}}
+    steps:
+      - name: output generation step
+        id: output_generation_step
+        run: echo "version=0.0.1" >> GITHUB_OUTPUT
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: re use output of last job
+        run: echo "the output of last job is $${{ needs.build.outputs.version }}"
+        
