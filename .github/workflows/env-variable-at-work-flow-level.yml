@@ -1,8 +1,5 @@
 name: env variable at work flow level
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 env:
   APP_ENV_NAME: dev
 jobs:
