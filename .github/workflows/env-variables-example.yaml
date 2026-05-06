@@ -1,0 +1,18 @@
+name: env variables exmaples
+on:
+  push:
+    branches:
+      - main
+env:
+  APP_ENV_NAME:dev
+jobs:
+  job_env_exmaple:
+    env:
+      APP_ENV_NAME: test
+    runs-on: ubuntu-latest
+    steps:
+      env: 
+        - name: env variabel example
+        APP_ENV_NAME: PROD
+        run: echo " env name is $APP_ENV_NAME "
+      
