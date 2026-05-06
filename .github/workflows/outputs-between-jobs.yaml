@@ -14,5 +14,5 @@ jobs:
     needs: build
     steps:
       - name: re use output of last job
-        run: echo "the output of last job is $${{ needs.build.outputs.version }}"
+        run: echo "the output of last job is ${{ needs.build.outputs.version }}"
         
