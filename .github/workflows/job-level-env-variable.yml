@@ -1,0 +1,10 @@
+name: job level env variables
+on: push
+jobs:
+  job_env_at_job_level: 
+    env:
+      APP_ENV_NAME: test
+    runs-on: ubuntu-latest
+    steps: 
+      - name: job level env variable
+        run : echo " the app evn value is, $APP_ENV_NAME"
