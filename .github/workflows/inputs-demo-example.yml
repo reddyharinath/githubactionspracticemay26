@@ -6,6 +6,11 @@ on:
         description: inputs demo environment
         required: true
         default: dev
+        types: choice
+        options:
+          - dev
+          - test
+          - prod
 jobs:
   job_env_input_demo:
     runs-on: ubuntu-latest
