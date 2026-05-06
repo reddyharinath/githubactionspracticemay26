@@ -1,0 +1,16 @@
+name: work flow on PR
+on:
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+    branches:
+      - main
+      - dev
+      - feature/**
+jobs:
+  job_at_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: trigger at PR
+        run:   echo " PR level trigger"
