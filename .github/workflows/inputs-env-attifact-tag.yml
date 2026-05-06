@@ -1,0 +1,25 @@
+name: env and artifact id as inputs
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: env name by choice
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+      artifact_tag:
+        description: artifact tag details
+        default: 0.0.1
+jobs:
+  job_env_choices_artifact_id:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: select env and enter tag id
+        run: |
+          echo " the env is ${{ inputs.environment }}"
+          echo " the artifact id is ${{ inputs.artifact_tag }}"
+        
