@@ -1,0 +1,10 @@
+name: env variable at step level
+on: workflow_dispatch
+jobs:
+  job_step_level_env_variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: env variable at step level
+        env:
+          APP_ENV_NAME: dev
+        run: echo "the env variable value is, $APP_ENV_NAME"
