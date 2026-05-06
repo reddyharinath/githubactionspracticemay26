@@ -1,0 +1,14 @@
+name: env variable at work flow level
+on:
+  push:
+    branches:
+      - main
+env:
+  APP_ENV_NAME: dev
+jobs:
+  job_env_variable_at_work_flow_level:
+    runs-on: ubuntu-latest
+    steps:
+      - name: env variable at work flow level
+        run: echo "the env name is, $APP_ENV_NAME"
+    
