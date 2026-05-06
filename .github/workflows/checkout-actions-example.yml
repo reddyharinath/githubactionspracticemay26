@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout actions exmaple step
-        uses: actions/checkoutactions@v4
+        uses: actions/checkout@v6
       - name: pront index.html file
         run: cat index.html
         
