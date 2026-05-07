@@ -5,10 +5,11 @@ on:
       - main
       - feature/**
   pull_request:
-    type: 
+    types: 
       - opened
     branches:
       - main
+      - dev
 jobs:
   job_step_level_if_Conditon:
     runs-on: ubuntu-latest
