@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step level if condition
-        if: github.actor == 'reddyharinath'
+        if: github.actor == 'reddyharinath123'
         run: echo " the actor who triggered with work flow is ${{ github.actor }} "
