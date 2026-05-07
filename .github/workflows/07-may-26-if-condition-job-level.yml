@@ -3,12 +3,16 @@ on:
   push:
     branches:
       - main
-      - dev
       - feature/**
+  pull_request:
+    type: 
+      - opened
+    branches:
+      - main
 jobs:
   job_step_level_if_Conditon:
     runs-on: ubuntu-latest
-    if: github.actor == 'reddyharinath' && github.ref_name == 'dev'
+    if: github.actor == 'reddyharinath' && github.ref_name == 'main'
     steps:
       - name: step level if condition
         run: echo " the actor who triggered with work flow is ${{ github.actor }} "
