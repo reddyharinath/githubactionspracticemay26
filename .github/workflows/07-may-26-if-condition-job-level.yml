@@ -13,7 +13,7 @@ on:
 jobs:
   job_step_level_if_Conditon:
     runs-on: ubuntu-latest
-    if: github.actor == 'reddyharinath' && github.base_ref == 'main' && github.ref_name == 'main'
+    if: github.actor == 'reddyharinath' && (github.base_ref == 'main' || github.ref_name == 'main')
     steps:
       - name: step level if condition
         run: echo " the actor who triggered with work flow is ${{ github.actor }} "
