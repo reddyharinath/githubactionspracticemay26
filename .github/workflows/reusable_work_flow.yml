@@ -1,10 +1,14 @@
 name: re usable work flow file
 on:
-  workflow_call
+  workflow_call:
+    inputs:
+      name: enter a name
+      required: true
+      type: String
 jobs:
   job_reusable_job:
     runs-on: ubuntu-latest
     steps:
       - name: re usable step
-        run: echo " re usabel step demo"
+        run: echo " re usabel step demo , ${{inputs.name}}"
         
