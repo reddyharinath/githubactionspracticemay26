@@ -1,0 +1,50 @@
+name: Email Notification Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Step
+        run: |
+          echo "Building application..."
+          echo "Build completed"
+
+  success-email:
+    needs: build
+
+    if: success()
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Success Email
+
+        uses: dawidd6/action-send-mail@v3
+
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+
+          subject: "GitHub Actions SUCCESS"
+
+          body: |
+            Build completed successfully.
+
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Triggered By: ${{ github.actor }}
+
+          to: yourgmail@gmail.com
+          from: GitHub Actions
