@@ -2,9 +2,10 @@ name: re usable work flow file
 on:
   workflow_call:
     inputs:
-      description:  enter a name
-      required: true
-      type:  string
+      name:
+        description:  enter a name
+        required: true
+        type:  string
 jobs:
   job_reusable_job:
     runs-on: ubuntu-latest
