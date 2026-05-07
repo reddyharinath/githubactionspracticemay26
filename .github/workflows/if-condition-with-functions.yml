@@ -36,7 +36,7 @@ jobs:
   job_failure_notification:
     needs: ['job_build','job_dev_deploy','job_prod_deploy']
     if: failure()
-    runs-on: ubtuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: send failure notification to the team
         run: echo "deployment job got triggered by ${{github.actor}} and on branch ${{github.ref_name}} and it is failed"
