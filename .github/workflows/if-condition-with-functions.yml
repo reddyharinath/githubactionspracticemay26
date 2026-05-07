@@ -19,13 +19,17 @@ jobs:
     if: github.ref_name == 'dev' && github.actor == 'reddyharinath'
     steps:
       - name: dev deployment step
-        run: echo "dev deployment job got triggered by ${{github.actor}} and on branch ${{github.ref_name}}"
+        run: |
+          echo "dev deployment job got triggered by ${{github.actor}} and on branch ${{github.ref_name}}"
+          exit 1
   job_prod_deploy:
     runs-on: ubuntu-latest
     if: github.ref_name == 'main' && github.actor == 'reddyharinath'
     steps:
       - name: prod deployment step
-        run: echo "prod deployment job got triggered by ${{github.actor}} and on branch ${{github.ref_name}}"
+        run: |
+          echo "prod deployment job got triggered by ${{github.actor}} and on branch ${{github.ref_name}}"
+          exit 1
   job_success_notification:
     needs: ['job_build','job_dev_deploy','job_prod_deploy']
     if: always() && !failure()
