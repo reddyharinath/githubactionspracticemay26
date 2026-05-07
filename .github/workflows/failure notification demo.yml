@@ -1,0 +1,36 @@
+  name: CI Pipeline for failure notification
+  on: workflow_dispatch
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+  		steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  			- name: Build
+  			  run: echo "Building application..."
+  	failure-notification:
+  		needs: build
+  		if: failure()
+  		runs-on: ubuntu-latest
+  		steps:
+  			- name: Send Failure Email
+  			  uses: dawidd6/action-send-mail@v3
+  			  with:
+  				server_address: smtp.gmail.com
+  				server_port: 465
+  				secure: true
+  
+  				username: ${{ secrets.MAIL_USERNAME }}
+  				password: ${{ secrets.MAIL_PASSWORD }}
+  
+  				subject: "GitHub Actions Failed"
+  
+  				body: |
+  					Workflow failed.
+  
+  					Repo: ${{ github.repository }}
+  					Workflow: ${{ github.workflow }}
+  					Run ID: ${{ github.run_id }}
+  
+  				to: yourmail@gmail.com
+  				from: GitHub Actions
