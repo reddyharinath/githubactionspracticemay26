@@ -1,0 +1,14 @@
+name: 07-may-26-if-condition-job-level
+on: 
+  push:
+    branches:
+      - main
+      - dev
+      - feature/**
+jobs:
+  job_step_level_if_Conditon:
+    runs-on: ubuntu-latest
+    if: github.actor == 'reddyharinath' && github.ref_name == 'dev'
+    steps:
+      - name: step level if condition
+        run: echo " the actor who triggered with work flow is ${{ github.actor }} "
