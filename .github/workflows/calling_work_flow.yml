@@ -1,0 +1,5 @@
+name: calling work flow file
+on: push
+jobs:
+  job_call_re_usable_file:
+    uses: ./.github/workflows/reusable_work_flow.yml
