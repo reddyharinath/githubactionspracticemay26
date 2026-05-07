@@ -1,0 +1,12 @@
+name: context variables examples
+on: workflow_dispatch
+jobs:
+  job_display_context_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display actor of the github
+        run: echo " ${{github.actor}} "
+      - name: display branch name
+        run: echo " ${{github.ref_name}} "
+      - name: display all context variables in JSON format
+        run: echo " ${{toJSON(github)}}"

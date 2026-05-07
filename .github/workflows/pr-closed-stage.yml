@@ -1,0 +1,13 @@
+name: pr closed state
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+jobs:
+  job_pr_closed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pr closed state
+        run: echo " pr closed state"

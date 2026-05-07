@@ -1,0 +1,19 @@
+name: inputs demo
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: inputs demo environment
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+jobs:
+  job_env_input_demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: inputs demo
+        run: echo " we are executing app in ${{ inputs.environment}}"
